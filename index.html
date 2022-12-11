@@ -1,0 +1,173 @@
+<!--
+
+ (`-').->  _     (`-')      (`-')  _                 (`-')  (`-')  _ _(`-')     _     (`-')      (`-').->
+ ( OO)_   (_)    ( OO).->   ( OO).-/     _        <-.(OO )  ( OO).-/( (OO ).-> (_)    ( OO).->   ( OO)_
+(_)--\_)  ,-(`-')/    '._  (,------.     \-,-----.,------,)(,------. \    .'_  ,-(`-')/    '._  (_)--\_)
+/    _ /  | ( OO)|'--...__) |  .---'      |  .--./|   /`. ' |  .---' '`'-..__) | ( OO)|'--...__)/    _ /
+\_..`--.  |  |  )`--.  .--'(|  '--.      /_) (`-')|  |_.' |(|  '--.  |  |  ' | |  |  )`--.  .--'\_..`--.
+.-._)   \(|  |_/    |  |    |  .--'      ||  |OO )|  .   .' |  .--'  |  |  / :(|  |_/    |  |   .-._)   \
+\       / |  |'->   |  |    |  `---.    (_'  '--'\|  |\  \  |  `---. |  '-'  / |  |'->   |  |   \       /
+ `-----'  `--'      `--'    `------'       `-----'`--' '--' `------' `------'  `--'      `--'    `-----'
+
+ I blatantly copied the source code and design from https://vicc.fyi/ - A talented ex-Coinbase engineer.
+
+ Here is his credits:
+ """
+ James Zhang for the layout inspiration https://james.lol
+ @giulioiamnot for the mouse-tracking code https://codepen.io/giulioiamnot
+ Jacob Horne for inspiring the weather + time widget inspired by Virgil Abloh's site https://jacob.energy
+ animate.css for silly + easy to use animations https://animate.style
+
+ v0.0.1
+ - Added dark mode thank me later :p
+ """
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>gm, i'm khoa 👋 </title>
+  <meta name="description" content="Khoa is an engineer working in crypto.">
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="./css/khoa.css" rel="stylesheet">
+  <link href="./css/lilnoun.css" rel="stylesheet">
+
+  <!-- Favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/doodle.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/doodle.png"">
+    <link rel=" icon" type="image/png" sizes="16x16" href="./images/doodle.png"">
+    <link rel=" manifest" href="./favicon/site.webmanifest">
+  <link rel="shortcut icon" href="./images/doodle.png"">
+
+    <!-- Rich Preview -->
+    <meta property=" og:title" content="gm, i'm Khoa 👋" />
+  <meta property="og:image" content="https://i.ibb.co/6DfMPRp/khoa-preview.jpg" />
+
+  <!-- Theme Color-->
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#2b2b2b" media="(prefers-color-scheme: dark)">
+</head>
+
+<body class="disable-drag"></body>
+
+<!-- Navigation Bar -->
+<nav class="navbar fixed-top navbar-expand-lg">
+  <div class="container-fluid">
+  </div>
+
+  <div class="right-align">
+    <div id="time-widget" class="floating-widget disable-select">
+      <picture>
+        <source srcset="./icons/clock-d.svg" media="(prefers-color-scheme:dark)">
+        <img src="./icons/clock-d.svg">
+      </picture>
+      <span id="live-clock" style="vertical-align:middle"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Main content -->
+<div class="centered">
+
+  <!-- Header section-->
+  <div class="section">
+    <div id="nft-badge-widget" class="disable-select">
+      <a href="https://doodles.app" target="_blank">
+        <h7>NFT</h7>
+      </a>
+    </div>
+
+    <div class="header">
+      <div id="lilnoun" class="disable-select">
+        <div class="eyes">
+          <div class="left-eyelid"></div>
+          <div class="left-eye">
+            <div class="left-pupil">
+            </div>
+          </div>
+          <div class="right-eyelid"></div>
+          <div class="right-eye">
+            <div class="right-pupil">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-text">
+        <div class="header-title">
+          <h1>Khoa Ho</h1>
+          <div class="header-widget disable-select">
+            <a href="https://zapper.fi/account/khoa.eth" target="_blank">
+              <h4>khoa.eth</h4>
+            </a>
+          </div>
+        </div>
+        <h2>Engineer - Crypto geek - Buildooor </h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- About me section -->
+  <div class="section">
+    <h3>Summary</h3>
+    <h4>
+      Co-founder and CTO @ <a href="https://www.x.com/bsx_labs" target="_blank">BSX</a> 🚀. We raised millions of dollars from the world class crypto VCs and angels to build the next generation of financial infrastructure onchain.
+
+      <br>
+      prev: Coinbase engineer, Georgia Tech grad
+    </h4>
+  </div>
+
+  <!-- Experience section -->
+  <div class="section">
+    <h3>Experience</h3>
+    <ul>
+      <li>
+        <h4>Co-founder and CTO at <a href="https://www.bsx.exchange/" target="_blank">BSX</a></h4>
+        <h5>2023 - Present</h5>
+      </li>
+      <li>
+        <h4>Technical Lead at <a href="https://coinbase.com/" target="_blank">Coinbase</a></h4>
+        <h5>2017 - 2023</h5>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Contact me section -->
+  <div class="section">
+    <h3>How to reach me</h3>
+    <h4>Find me on <a href="https://www.linkedin.com/in/hokhoa/" class="linkedin" target="_blank">LinkedIn</a>, @khoa on
+      <a href="https://warpcast.com/khoa" class="farcaster" target="_blank">Farcaster</a>, <a
+        href="https://twitter.com/0xkhoa" class="twitter" target="_blank">Twitter</a> or send an email to me at khoa dot
+      com.
+    </h4>
+    <h4> My 💌 DMs are open</h4>
+  </div>
+
+  <!-- Footer section-->
+  <div class="section footer-stuff">
+    <h6>2022 ⌐◨-◨ Check out my NFT collection on <a href="https://opensea.io/khoa" class="gallery"
+        target="_blank">OpenSea</a> or <a href="https://gallery.so/khoa" class="gallery"
+        target="_blank">Gallery</a>.</h6>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script type="text/javascript" src="./scripts/lilnoun.js"></script>
+<script type="text/javascript" src="./scripts/weather+time.js"></script>
+<script type="text/javascript" src="./scripts/khoa.js"></script>
+
+</body>
+
+</html>
