@@ -255,8 +255,8 @@ a.twitter:hover {
     }
 
 
-    #nft-badge-widget h7:hover, .header-widget h4:hover {
-        color: #FAD74A !important;
+    #nft-badge-widget h7:hover, .header-widget h4:hover, .header-widget h4 {
+        color: #ffe881 !important;
     }
 }
 
@@ -499,6 +499,7 @@ a.twitter:hover {
     line-height: 1.4rem !important;
     font-family: 'SF Pro Rounded Medium' !important;
     color: #AEAEB2 !important;
+
 }
 
 .header-title {
@@ -544,7 +545,8 @@ a.twitter:hover {
     }
 
     .header-widget h4 {
-        color: #636366 !important;
+        /* color: #636366 !important; */
+        color: #84ffc2 !important;
     }
 
     #nft-badge-widget {
