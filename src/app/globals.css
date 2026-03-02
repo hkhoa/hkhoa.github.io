@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #faf9f7;
+  --color-cream-dark: #f5f3f0;
+  --color-dark-bg: #1a1a1a;
+  --color-dark-card: #242424;
+  --color-dark-border: #333333;
+  --color-text-primary: #2b2b2b;
+  --color-text-secondary: #636366;
+  --color-text-dark-primary: #f5f5f5;
+  --color-text-dark-secondary: #aeaeb2;
+  --color-linkedin: #0072b1;
+  --color-farcaster: #7157b8;
+  --color-twitter: #1d9bf0;
+  --color-gallery: #ff5c00;
+  --color-opensea: #2081e2;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Base styles */
+body {
+  @apply bg-cream text-text-primary antialiased;
+  font-family: var(--font-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-dark-bg text-text-dark-primary;
+  }
+}
+
+/* Wavy link underlines */
+.wavy-link {
+  @apply no-underline relative inline;
+  text-decoration: underline wavy;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.wavy-link:hover {
+  text-decoration-color: #aeaeb2;
+}
+
+.wavy-link-linkedin:hover {
+  text-decoration-color: var(--color-linkedin);
+}
+
+.wavy-link-farcaster:hover {
+  text-decoration-color: var(--color-farcaster);
+}
+
+.wavy-link-twitter:hover {
+  text-decoration-color: var(--color-twitter);
+}
+
+.wavy-link-gallery:hover {
+  text-decoration-color: var(--color-gallery);
+}
+
+.wavy-link-opensea:hover {
+  text-decoration-color: var(--color-opensea);
+}
+
+/* Hinge animation (from animate.css, simplified) */
+@keyframes hinge {
+  0% {
+    animation-timing-function: ease-in-out;
+  }
+  20%,
+  60% {
+    transform: rotate3d(0, 0, 1, 80deg);
+    animation-timing-function: ease-in-out;
+  }
+  40%,
+  80% {
+    transform: rotate3d(0, 0, 1, 60deg);
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 700px, 0);
+    opacity: 0;
+  }
+}
+
+.animate-hinge {
+  transform-origin: top left;
+  animation: hinge 0.8s ease-in-out;
+}
+
+/* Fade animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.animate-fade-out-down {
+  animation: fadeOutDown 0.2s ease-in forwards;
+}
+
+/* Page fade-in */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-fade-in {
+  animation: pageFadeIn 0.5s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Card sections */
+.card {
+  @apply rounded-2xl border border-black/5 bg-white p-6 shadow-sm;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    @apply border-dark-border bg-dark-card;
+  }
+}
+
+/* Selection */
+::selection {
+  @apply bg-text-primary/10;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    @apply bg-text-dark-primary/10;
+  }
+}
