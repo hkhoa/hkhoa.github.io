@@ -18,8 +18,10 @@ export type Experience = {
   title: string;
   company: string;
   companyUrl: string;
+  icon: string;
   note?: string;
   noteUrl?: string;
+  noteIcon?: string;
   years: string;
 };
 
@@ -28,14 +30,17 @@ export const EXPERIENCES: Experience[] = [
     title: "Co-founder/CTO",
     company: "BSX",
     companyUrl: "https://bsxfdn.com/",
+    icon: "/icons/bsx.png",
     note: "acquired by RISE",
     noteUrl: "https://x.com/risechain/status/1988261714769645772",
+    noteIcon: "/icons/rise.png",
     years: "2023 - 2025",
   },
   {
     title: "Technical Lead",
     company: "Coinbase",
     companyUrl: "https://coinbase.com/",
+    icon: "/icons/coinbase.png",
     years: "2017 - 2023",
   },
 ];
