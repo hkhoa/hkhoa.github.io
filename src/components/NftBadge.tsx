@@ -1,0 +1,18 @@
+"use client";
+
+import { SITE } from "@/lib/constants";
+
+export default function NftBadge({ visible }: { visible: boolean }) {
+  return (
+    <a
+      href={SITE.doodlesLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`absolute -right-2 -top-2 z-10 rounded-full bg-white px-1.5 py-0.5 text-[10px] font-bold text-black transition-opacity ${
+        visible ? "opacity-100" : "animate-fade-out-down"
+      }`}
+    >
+      NFT
+    </a>
+  );
+}

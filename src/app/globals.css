@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #000000;
+  --color-card: #111111;
+  --color-card-border: #222222;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #8e8e93;
+  --color-linkedin: #0072b1;
+  --color-farcaster: #7157b8;
+  --color-twitter: #1d9bf0;
+  --color-gallery: #ff5c00;
+  --color-opensea: #2081e2;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Base styles */
+body {
+  @apply bg-bg text-text-primary antialiased;
+  font-family: var(--font-sans);
+}
+
+/* Wavy link underlines */
+.wavy-link {
+  @apply no-underline relative inline;
+  text-decoration: underline wavy;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.wavy-link:hover {
+  text-decoration-color: #aeaeb2;
+}
+
+.wavy-link-linkedin:hover {
+  text-decoration-color: var(--color-linkedin);
+}
+
+.wavy-link-farcaster:hover {
+  text-decoration-color: var(--color-farcaster);
+}
+
+.wavy-link-twitter:hover {
+  text-decoration-color: var(--color-twitter);
+}
+
+.wavy-link-gallery:hover {
+  text-decoration-color: var(--color-gallery);
+}
+
+.wavy-link-opensea:hover {
+  text-decoration-color: var(--color-opensea);
+}
+
+/* Slow drop animation */
+@keyframes hinge {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: rotate3d(0, 0, 1, 60deg);
+    opacity: 1;
+  }
+  40% {
+    transform: rotate3d(0, 0, 1, 40deg);
+    opacity: 1;
+  }
+  60% {
+    transform: rotate3d(0, 0, 1, 70deg);
+    opacity: 1;
+  }
+  80% {
+    transform: rotate3d(0, 0, 1, 60deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 500px, 0);
+    opacity: 0;
+  }
+}
+
+.animate-hinge {
+  transform-origin: top left;
+  animation: hinge 1.4s ease-in-out;
+}
+
+/* Fade animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.animate-fade-out-down {
+  animation: fadeOutDown 0.2s ease-in forwards;
+}
+
+/* Page fade-in */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-fade-in {
+  animation: pageFadeIn 0.5s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Card sections */
+.card {
+  @apply rounded-2xl border border-card-border bg-card p-6;
+}
+
+/* Prose styles for blog content */
+.prose {
+  @apply leading-relaxed;
+}
+
+.prose h2 {
+  @apply mt-8 mb-4 text-xl font-semibold tracking-tight;
+}
+
+.prose h3 {
+  @apply mt-6 mb-3 text-lg font-semibold tracking-tight;
+}
+
+.prose p {
+  @apply mb-4 text-text-secondary;
+}
+
+.prose a {
+  @apply relative inline text-text-primary no-underline;
+  text-decoration: underline wavy;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.prose a:hover {
+  text-decoration-color: #aeaeb2;
+}
+
+.prose strong {
+  @apply font-semibold text-text-primary;
+}
+
+.prose ul {
+  @apply mb-4 ml-4 list-disc text-text-secondary;
+}
+
+.prose ol {
+  @apply mb-4 ml-4 list-decimal text-text-secondary;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose blockquote {
+  @apply my-4 border-l-2 border-card-border pl-4 text-text-secondary italic;
+}
+
+.prose hr {
+  @apply my-8 border-card-border;
+}
+
+.prose code:not(pre code) {
+  @apply rounded bg-white/5 px-1.5 py-0.5 text-sm font-mono;
+}
+
+.prose pre {
+  @apply my-4 overflow-x-auto rounded-lg border border-card-border p-4 text-sm font-mono;
+}
+
+.prose img {
+  @apply my-4 rounded-lg;
+}
+
+/* Selection */
+::selection {
+  @apply bg-text-primary/10;
+}

@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next.js
+.next/
+out/
+
+# misc
+*.pem
+.DS_Store
+
+# debug
+npm-debug.log*
+
+# env
+.env*.local
+
+# typescript
+next-env.d.ts
