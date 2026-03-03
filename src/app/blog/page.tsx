@@ -38,7 +38,7 @@ export default function BlogPage() {
 
         <div className="flex flex-col gap-4">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="card group block transition-colors hover:border-white/20">
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="card group block transition-colors hover:border-text-secondary/30">
               <h2 className="text-lg font-medium">{post.title}</h2>
               <p className="mt-1 text-sm text-text-secondary">
                 {post.description}

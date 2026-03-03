@@ -15,7 +15,7 @@ export default function Header() {
               href={SITE.ensLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-white/5 px-3 py-0.5 text-xs font-medium text-text-secondary transition-colors hover:bg-white/10"
+              className="rounded-full border border-card-border bg-card px-3 py-0.5 text-xs font-medium text-text-secondary transition-colors hover:text-text-primary"
             >
               {SITE.ensName}
             </a>

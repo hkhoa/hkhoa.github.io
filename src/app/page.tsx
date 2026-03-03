@@ -4,6 +4,7 @@ import ExperienceList from "@/components/ExperienceList";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import LiveClock from "@/components/LiveClock";
+import ThemeToggle from "@/components/ThemeToggle";
 import FadeIn from "@/components/FadeIn";
 import { getAllPostsMeta } from "@/lib/blog";
 
@@ -22,7 +23,8 @@ export default function Home() {
 
   return (
     <FadeIn>
-      <div className="fixed right-6 top-6 z-50">
+      <div className="fixed right-6 top-6 z-50 flex items-center gap-2">
+        <ThemeToggle />
         <LiveClock />
       </div>
 
@@ -33,10 +35,6 @@ export default function Home() {
 
         <div className="card">
           <ExperienceList />
-        </div>
-
-        <div className="card">
-          <ContactSection />
         </div>
 
         <div className="card">
@@ -52,7 +50,7 @@ export default function Home() {
             {recentPosts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
                 <div className="flex items-baseline justify-between gap-4">
-                  <span className="group-hover:text-white transition-colors">
+                  <span className="transition-colors group-hover:text-text-primary">
                     {post.title}
                   </span>
                   <time className="shrink-0 text-xs text-text-secondary">
@@ -65,6 +63,10 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+
+        <div className="card">
+          <ContactSection />
         </div>
 
         <Footer />

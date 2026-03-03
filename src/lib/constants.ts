@@ -44,23 +44,33 @@ export type ContactLink = {
   label: string;
   url: string;
   colorClass: string;
+  icon: string;
 };
 
 export const CONTACT_LINKS: ContactLink[] = [
   {
+    label: "0xkhoa",
+    url: "https://twitter.com/0xkhoa",
+    colorClass: "wavy-link-twitter",
+    icon: "x",
+  },
+  {
+    label: "GitHub",
+    url: "https://github.com/hkhoa",
+    colorClass: "wavy-link-github",
+    icon: "github",
+  },
+  {
     label: "LinkedIn",
     url: "https://www.linkedin.com/in/hokhoa/",
     colorClass: "wavy-link-linkedin",
+    icon: "linkedin",
   },
   {
-    label: "Farcaster",
-    url: "https://warpcast.com/khoa",
-    colorClass: "wavy-link-farcaster",
-  },
-  {
-    label: "Twitter",
-    url: "https://twitter.com/0xkhoa",
-    colorClass: "wavy-link-twitter",
+    label: "email",
+    url: "mailto:me@khoa.com",
+    colorClass: "wavy-link-email",
+    icon: "email",
   },
 ];
 

@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+import AgentationWrapper from "@/components/AgentationWrapper";
 import { SITE } from "@/lib/constants";
 import "./globals.css";
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     apple: "/images/doodle.png",
   },
   other: {
-    "theme-color": "#000000",
+    "theme-color": "#ffffff",
   },
 };
 
@@ -37,9 +38,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${geist.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;if(s==='dark'||(s!=='light'&&d))document.documentElement.classList.add('dark')}catch(e){}})()`,
+          }}
+        />
       </head>
       <body>
         {children}
@@ -47,11 +54,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-
-function AgentationWrapper() {
-  if (process.env.NODE_ENV !== "development") return null;
-
-  const { Agentation } = require("agentation");
-  return <Agentation />;
 }

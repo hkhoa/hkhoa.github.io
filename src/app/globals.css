@@ -1,24 +1,50 @@
 @import "tailwindcss";
 
+/* Theme variables — light default, dark override */
+:root {
+  --bg: #ffffff;
+  --card: #f9f9f9;
+  --card-border: #e5e5e5;
+  --text-primary: #111111;
+  --text-secondary: #636366;
+  --code-bg: rgba(0, 0, 0, 0.05);
+  --hover-underline: #636366;
+  --selection-bg: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --bg: #000000;
+  --card: #111111;
+  --card-border: #222222;
+  --text-primary: #f5f5f5;
+  --text-secondary: #8e8e93;
+  --code-bg: rgba(255, 255, 255, 0.05);
+  --hover-underline: #aeaeb2;
+  --selection-bg: rgba(245, 245, 245, 0.1);
+}
+
 @theme {
-  --color-bg: #000000;
-  --color-card: #111111;
-  --color-card-border: #222222;
-  --color-text-primary: #f5f5f5;
-  --color-text-secondary: #8e8e93;
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
   --color-linkedin: #0072b1;
   --color-farcaster: #7157b8;
   --color-twitter: #1d9bf0;
+  --color-email: #d44638;
+  --color-github: #6e40c9;
   --color-gallery: #ff5c00;
   --color-opensea: #2081e2;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Geist", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
 }
 
 /* Base styles */
 body {
   @apply bg-bg text-text-primary antialiased;
   font-family: var(--font-sans);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Wavy link underlines */
@@ -32,7 +58,7 @@ body {
 }
 
 .wavy-link:hover {
-  text-decoration-color: #aeaeb2;
+  text-decoration-color: var(--hover-underline);
 }
 
 .wavy-link-linkedin:hover {
@@ -45,6 +71,14 @@ body {
 
 .wavy-link-twitter:hover {
   text-decoration-color: var(--color-twitter);
+}
+
+.wavy-link-email:hover {
+  text-decoration-color: var(--color-email);
+}
+
+.wavy-link-github:hover {
+  text-decoration-color: var(--color-github);
 }
 
 .wavy-link-gallery:hover {
@@ -151,6 +185,11 @@ body {
   @apply rounded-2xl border border-card-border bg-card p-6;
 }
 
+/* Section divider */
+.section-divider {
+  @apply border-card-border;
+}
+
 /* Prose styles for blog content */
 .prose {
   @apply leading-relaxed;
@@ -178,7 +217,7 @@ body {
 }
 
 .prose a:hover {
-  text-decoration-color: #aeaeb2;
+  text-decoration-color: var(--hover-underline);
 }
 
 .prose strong {
@@ -206,7 +245,8 @@ body {
 }
 
 .prose code:not(pre code) {
-  @apply rounded bg-white/5 px-1.5 py-0.5 text-sm font-mono;
+  @apply rounded px-1.5 py-0.5 text-sm font-mono;
+  background-color: var(--code-bg);
 }
 
 .prose pre {
@@ -217,7 +257,18 @@ body {
   @apply my-4 rounded-lg;
 }
 
+/* Code block theme switching */
+.dark pre[data-theme="light"],
+.dark [data-theme="light"] {
+  display: none !important;
+}
+
+html:not(.dark) pre[data-theme="dark"],
+html:not(.dark) [data-theme="dark"] {
+  display: none !important;
+}
+
 /* Selection */
 ::selection {
-  @apply bg-text-primary/10;
+  background-color: var(--selection-bg);
 }
