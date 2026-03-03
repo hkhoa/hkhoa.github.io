@@ -3,7 +3,7 @@ import { CONTACT_LINKS } from "@/lib/constants";
 export default function ContactSection() {
   return (
     <div>
-      <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-text-secondary dark:text-text-dark-secondary">
+      <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-text-secondary">
         How to reach me
       </h3>
       <p>

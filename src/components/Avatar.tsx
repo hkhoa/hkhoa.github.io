@@ -3,7 +3,6 @@
 import { useState, useCallback } from "react";
 import { SITE } from "@/lib/constants";
 import NftBadge from "./NftBadge";
-import EyeTracker from "./EyeTracker";
 
 export default function Avatar() {
   const [isHinging, setIsHinging] = useState(false);
@@ -31,7 +30,6 @@ export default function Avatar() {
           className="h-12 w-12"
           draggable={false}
         />
-        <EyeTracker />
       </div>
     </div>
   );

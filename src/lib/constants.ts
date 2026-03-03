@@ -27,9 +27,9 @@ export const EXPERIENCES: Experience[] = [
   {
     title: "Co-founder/CTO",
     company: "BSX",
-    companyUrl: "https://www.bsx.exchange/",
+    companyUrl: "https://bsxfdn.com/",
     note: "acquired by RISE",
-    noteUrl: "https://x.com/risechain",
+    noteUrl: "https://x.com/risechain/status/1988261714769645772",
     years: "2023 - 2025",
   },
   {

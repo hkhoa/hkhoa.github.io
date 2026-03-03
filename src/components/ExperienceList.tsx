@@ -3,7 +3,7 @@ import { EXPERIENCES } from "@/lib/constants";
 export default function ExperienceList() {
   return (
     <div>
-      <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-text-secondary dark:text-text-dark-secondary">
+      <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-text-secondary">
         Experience
       </h3>
       <ul className="space-y-3">
@@ -20,7 +20,7 @@ export default function ExperienceList() {
                 {exp.company}
               </a>
               {exp.note && (
-                <span className="text-text-secondary dark:text-text-dark-secondary">
+                <span className="text-text-secondary">
                   {" "}
                   (
                   {exp.noteUrl ? (
@@ -39,7 +39,7 @@ export default function ExperienceList() {
                 </span>
               )}
             </p>
-            <p className="text-sm text-text-secondary dark:text-text-dark-secondary">
+            <p className="text-sm text-text-secondary">
               {exp.years}
             </p>
           </li>

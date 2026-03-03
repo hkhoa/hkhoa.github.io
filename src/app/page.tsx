@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "@/components/Header";
 import ExperienceList from "@/components/ExperienceList";
 import ContactSection from "@/components/ContactSection";
@@ -23,6 +24,13 @@ export default function Home() {
 
         <div className="card">
           <ContactSection />
+        </div>
+
+        <div className="card">
+          <Link href="/blog" className="wavy-link">
+            Blog
+          </Link>
+          <span className="ml-2 text-text-secondary">— things I find interesting</span>
         </div>
 
         <Footer />

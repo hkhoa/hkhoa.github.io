@@ -27,8 +27,7 @@ export const metadata: Metadata = {
     apple: "/images/doodle.png",
   },
   other: {
-    "theme-color-light": "#faf9f7",
-    "theme-color-dark": "#1a1a1a",
+    "theme-color": "#000000",
   },
 };
 
@@ -40,16 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <meta
-          name="theme-color"
-          content="#faf9f7"
-          media="(prefers-color-scheme: light)"
-        />
-        <meta
-          name="theme-color"
-          content="#1a1a1a"
-          media="(prefers-color-scheme: dark)"
-        />
+        <meta name="theme-color" content="#000000" />
       </head>
       <body>
         {children}

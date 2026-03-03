@@ -15,17 +15,17 @@ export default function Header() {
               href={SITE.ensLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-text-primary/5 px-3 py-0.5 text-xs font-medium text-text-secondary transition-colors hover:bg-text-primary/10 dark:bg-white/5 dark:text-text-dark-secondary dark:hover:bg-white/10"
+              className="rounded-full bg-white/5 px-3 py-0.5 text-xs font-medium text-text-secondary transition-colors hover:bg-white/10"
             >
               {SITE.ensName}
             </a>
           </div>
-          <p className="mt-1 text-text-secondary dark:text-text-dark-secondary">
+          <p className="mt-1 text-text-secondary">
             {SITE.subtitle}
           </p>
         </div>
       </div>
-      <div className="text-text-secondary dark:text-text-dark-secondary">
+      <div className="text-text-secondary">
         <p>{SUMMARY.main}</p>
         <p className="mt-1 text-sm">{SUMMARY.previous}</p>
       </div>

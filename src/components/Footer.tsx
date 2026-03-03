@@ -2,7 +2,7 @@ import { NFT_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="text-sm text-text-secondary dark:text-text-dark-secondary">
+    <footer className="text-sm text-text-secondary">
       Check out my NFT collection on{" "}
       <a
         href={NFT_LINKS.opensea.url}

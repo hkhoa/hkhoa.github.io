@@ -29,11 +29,11 @@ export default function LiveClock() {
   if (!mounted) return null;
 
   return (
-    <div className="hidden items-center gap-2 text-sm text-text-secondary select-none dark:text-text-dark-secondary lg:flex">
+    <div className="hidden items-center gap-2 rounded-full bg-card border border-card-border px-4 py-2 text-sm text-text-primary select-none lg:flex">
       <img
         src="/icons/clock-d.svg"
         alt=""
-        className="h-4 w-4 dark:invert"
+        className="h-4 w-4 invert"
         draggable={false}
       />
       <span className="font-mono tabular-nums">{time}</span>
