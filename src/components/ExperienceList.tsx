@@ -2,71 +2,36 @@ import { EXPERIENCES } from "@/lib/constants";
 
 export default function ExperienceList() {
   return (
-    <div>
-      <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-text-secondary">
-        Experience
-      </h3>
-      <ul className="space-y-3">
-        {EXPERIENCES.map((exp) => (
-          <li key={exp.company} className="flex items-center justify-between gap-4">
-            <div>
-              <p className="font-medium">
-                {exp.title} at{" "}
-                <a
-                  href={exp.companyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="wavy-link"
-                >
-                  {exp.company}
-                </a>
-                {exp.note && (
-                  <span className="text-text-secondary">
-                    {" "}
-                    (
-                    {exp.noteUrl ? (
-                      <a
-                        href={exp.noteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="wavy-link"
-                      >
-                        {exp.note}
-                      </a>
-                    ) : (
-                      exp.note
-                    )}
-                    )
-                  </span>
-                )}
-              </p>
-              <p className="text-sm text-text-secondary">
-                {exp.years}
-              </p>
-            </div>
-            <div className="flex shrink-0 items-center gap-2">
-              <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={exp.icon}
-                  alt={exp.company}
-                  className="h-7 w-7 rounded-md"
-                  draggable={false}
-                />
+    <ol className="experience-list">
+      {EXPERIENCES.map((exp, index) => (
+        <li key={exp.company} className="experience-row">
+          <span className="row-index">{String(index + 1).padStart(2, "0")}</span>
+          <div className="experience-copy">
+            <p>
+              {exp.title}
+            </p>
+            {exp.description && (
+              <span className="experience-description">{exp.description}</span>
+            )}
+            {exp.note && (
+              <a href={exp.noteUrl} target="_blank" rel="noopener noreferrer">
+                {exp.note}
               </a>
-              {exp.noteIcon && (
-                <a href={exp.noteUrl} target="_blank" rel="noopener noreferrer">
-                  <img
-                    src={exp.noteIcon}
-                    alt=""
-                    className="h-7 w-7 rounded-md"
-                    draggable={false}
-                  />
-                </a>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+            )}
+          </div>
+          <time>{exp.years.replace(" - ", " to ")}</time>
+          <div className="company-marks">
+            <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
+              <img src={exp.icon} alt={exp.company} draggable={false} />
+            </a>
+            {exp.noteIcon && (
+              <a href={exp.noteUrl} target="_blank" rel="noopener noreferrer">
+                <img src={exp.noteIcon} alt="RiSE" draggable={false} />
+              </a>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
   );
 }

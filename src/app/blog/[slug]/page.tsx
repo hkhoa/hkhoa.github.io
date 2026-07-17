@@ -12,7 +12,7 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
   return params.then(({ slug }) => {
     const { frontmatter } = getBlogPost(slug);
     return {
-      title: `${frontmatter.title} — Khoa`,
+      title: `${frontmatter.title} | Khoa`,
       description: frontmatter.description,
     };
   });

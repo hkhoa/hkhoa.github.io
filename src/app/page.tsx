@@ -14,7 +14,7 @@ function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
-    day: "numeric",
+    day: "2-digit",
   });
 }
 
@@ -28,46 +28,59 @@ export default function Home() {
         <LiveClock />
       </div>
 
-      <main className="mx-auto flex min-h-screen max-w-xl flex-col justify-center gap-4 px-6 py-16">
-        <div className="card">
-          <Header />
-        </div>
+      <main className="editorial-shell">
+        <div className="registration-mark registration-mark-tl" aria-hidden="true" />
+        <div className="registration-mark registration-mark-br" aria-hidden="true" />
+        <aside className="micro-rail micro-rail-left" aria-hidden="true">
+          <span>SYS</span><i /><small>OK</small><i /><small>PWR</small><i /><small>NET</small><i /><small>SIG</small>
+        </aside>
+        <aside className="micro-rail micro-rail-right" aria-hidden="true">
+          <span>CAL</span><i /><i /><i /><i /><i /><i /><small>REF 02-A</small>
+        </aside>
 
-        <div className="card">
-          <ExperienceList />
-        </div>
+        <div className="editorial-grid">
+          <section className="hero-panel" aria-labelledby="page-title">
+            <Header />
+          </section>
 
-        <div className="card">
-          <div className="mb-4 flex items-baseline justify-between">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-text-secondary">
-              Blog
-            </h3>
-            <Link href="/blog" className="wavy-link text-sm text-text-secondary">
-              View all
-            </Link>
-          </div>
-          <div className="flex flex-col gap-3">
-            {recentPosts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
-                <div className="flex items-baseline justify-between gap-4">
-                  <span className="transition-colors group-hover:text-text-primary">
-                    {post.title}
+          <section className="experience-panel indexed-section">
+            <div className="section-heading">
+              <span>02</span>
+              <h2>Experience</h2>
+              <i aria-hidden="true" />
+            </div>
+            <div className="calibration-note" aria-hidden="true">CALIBRATION<br />REF 02-A <span /></div>
+            <ExperienceList />
+          </section>
+
+          <section className="journal-panel indexed-section">
+            <div className="section-heading">
+              <span>03</span>
+              <h2>Journal</h2>
+              <i aria-hidden="true" />
+            </div>
+            <div className="signal-trace" aria-hidden="true"><span>BW: 20MHZ</span></div>
+            <div className="journal-list">
+              {recentPosts.map((post, index) => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="journal-row group">
+                  <span className="row-index">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="journal-copy">
+                    <strong>{post.title}</strong>
+                    <small>{post.description}</small>
                   </span>
-                  <time className="shrink-0 text-xs text-text-secondary">
-                    {formatDate(post.date)}
-                  </time>
-                </div>
-                <p className="mt-0.5 text-sm text-text-secondary">
-                  {post.description}
-                </p>
-              </Link>
-            ))}
-          </div>
+                  <time>{formatDate(post.date)}</time>
+                  <span className="journal-arrow" aria-hidden="true">→</span>
+                </Link>
+              ))}
+            </div>
+          </section>
         </div>
 
-        <div className="card">
+        <section className="contact-rail" aria-label="Contact">
+          <div className="contact-title"><span>04</span> Contact</div>
+          <p className="contact-prompt">Let&apos;s build.<br />Let&apos;s ship.</p>
           <ContactSection />
-        </div>
+        </section>
 
         <Footer />
       </main>

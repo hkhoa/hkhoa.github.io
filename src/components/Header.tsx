@@ -3,31 +3,26 @@ import Avatar from "./Avatar";
 
 export default function Header() {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex items-center gap-4">
+    <div className="hero-content">
+      <div className="hero-masthead">
         <Avatar />
-        <div>
-          <div className="flex items-center gap-3">
-            <h1 className="text-2xl font-semibold tracking-tight">
-              {SITE.name}
-            </h1>
-            <a
-              href={SITE.ensLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-card-border bg-card px-3 py-0.5 text-xs font-medium text-text-secondary transition-colors hover:text-text-primary"
-            >
+        <div className="hero-identity">
+          <div className="hero-name-row">
+            <h1 id="page-title" data-text="Khoa Ho">Khoa Ho</h1>
+            <a href={SITE.ensLink} target="_blank" rel="noopener noreferrer">
               {SITE.ensName}
             </a>
           </div>
-          <p className="mt-1 text-text-secondary">
-            {SITE.subtitle}
-          </p>
+          <p className="hero-role">{SITE.subtitle.replaceAll(" - ", " · ")}</p>
         </div>
       </div>
-      <div className="text-text-secondary">
-        <p>{SUMMARY.main}</p>
-        <p className="mt-1 text-sm">{SUMMARY.previous}</p>
+
+      <div className="hero-statement">
+        <span className="statement-index">01</span>
+        <div>
+          <p className="hero-summary">{SUMMARY.main}</p>
+          <p className="hero-history">{SUMMARY.previous}</p>
+        </div>
       </div>
     </div>
   );

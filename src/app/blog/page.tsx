@@ -4,7 +4,7 @@ import BlogNav from "@/components/BlogNav";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
-  title: "Blog — Khoa",
+  title: "Blog | Khoa",
   description: "Writing about engineering, crypto, and things I find interesting.",
 };
 

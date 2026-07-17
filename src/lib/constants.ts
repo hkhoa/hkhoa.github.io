@@ -10,7 +10,7 @@ export const SITE = {
 } as const;
 
 export const SUMMARY = {
-  main: "Building the next generation of financial infrastructure onchain.",
+  main: "tinkering with AI",
   previous: "Prev: BSX, Coinbase, Georgia Tech grad",
 } as const;
 
@@ -22,6 +22,7 @@ export type Experience = {
   note?: string;
   noteUrl?: string;
   noteIcon?: string;
+  description?: string;
   years: string;
 };
 
@@ -60,19 +61,19 @@ export const CONTACT_LINKS: ContactLink[] = [
     icon: "x",
   },
   {
-    label: "GitHub",
+    label: "khoa0x",
     url: "https://github.com/hkhoa",
     colorClass: "wavy-link-github",
     icon: "github",
   },
   {
-    label: "LinkedIn",
+    label: "hokhoa",
     url: "https://www.linkedin.com/in/hokhoa/",
     colorClass: "wavy-link-linkedin",
     icon: "linkedin",
   },
   {
-    label: "email",
+    label: "me@khoa.com",
     url: "mailto:me@khoa.com",
     colorClass: "wavy-link-email",
     icon: "email",

@@ -2,26 +2,16 @@ import { NFT_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="text-sm text-text-secondary">
-      Check out my NFT collection on{" "}
-      <a
-        href={NFT_LINKS.opensea.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="wavy-link wavy-link-opensea"
-      >
-        {NFT_LINKS.opensea.label}
-      </a>{" "}
-      or{" "}
-      <a
-        href={NFT_LINKS.gallery.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="wavy-link wavy-link-gallery"
-      >
-        {NFT_LINKS.gallery.label}
-      </a>
-      .
+    <footer className="editorial-footer">
+      <span>engineered systems.</span>
+      <span aria-hidden="true">/</span>
+      <p>
+        open editions: <a href={NFT_LINKS.opensea.url} target="_blank" rel="noopener noreferrer">{NFT_LINKS.opensea.label}</a>
+        {" / "}
+        <a href={NFT_LINKS.gallery.url} target="_blank" rel="noopener noreferrer">{NFT_LINKS.gallery.label}</a>
+      </p>
+      <span aria-hidden="true">/</span>
+      <span>shared future.</span>
     </footer>
   );
 }
