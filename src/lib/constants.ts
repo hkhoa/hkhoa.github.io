@@ -1,17 +1,12 @@
 export const SITE = {
   name: "Khoa Ho",
   title: "gm, i'm khoa",
-  subtitle: "Engineer - Crypto geek - Buildooor",
+  subtitle: "engineer - crypto geek - builder",
   description: "Khoa is an engineer working in crypto.",
   ogImage: "https://i.ibb.co/6DfMPRp/khoa-preview.jpg",
   ensName: "khoa.eth",
   ensLink: "https://zapper.xyz/account/khoa.eth",
   doodlesLink: "https://doodles.app",
-} as const;
-
-export const SUMMARY = {
-  main: "tinkering with AI",
-  previous: "Prev: BSX, Coinbase, Georgia Tech grad",
 } as const;
 
 export type Experience = {

@@ -8,18 +8,24 @@ export default function ExperienceList() {
           <span className="row-index">{String(index + 1).padStart(2, "0")}</span>
           <div className="experience-copy">
             <p>
-              {exp.title}
-            </p>
-            {exp.description && (
-              <span className="experience-description">{exp.description}</span>
-            )}
-            {exp.note && (
-              <a href={exp.noteUrl} target="_blank" rel="noopener noreferrer">
-                {exp.note}
+              <span>{exp.title}</span>
+              <small> at </small>
+              <a className="experience-company" href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
+                {exp.company}
               </a>
-            )}
+            </p>
+            <div className="experience-details">
+              <time>{exp.years.replace(" - ", " to ")}</time>
+              {exp.note && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <a href={exp.noteUrl} target="_blank" rel="noopener noreferrer">
+                    {exp.note}
+                  </a>
+                </>
+              )}
+            </div>
           </div>
-          <time>{exp.years.replace(" - ", " to ")}</time>
           <div className="company-marks">
             <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
               <img src={exp.icon} alt={exp.company} draggable={false} />

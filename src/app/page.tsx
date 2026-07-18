@@ -46,10 +46,9 @@ export default function Home() {
           <section className="experience-panel indexed-section">
             <div className="section-heading">
               <span>02</span>
-              <h2>Experience</h2>
+              <h2>Previously</h2>
               <i aria-hidden="true" />
             </div>
-            <div className="calibration-note" aria-hidden="true">CALIBRATION<br />REF 02-A <span /></div>
             <ExperienceList />
           </section>
 

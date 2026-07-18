@@ -1,4 +1,4 @@
-import { SITE, SUMMARY } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
 import Avatar from "./Avatar";
 
 export default function Header() {
@@ -17,12 +17,12 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="hero-statement">
-        <span className="statement-index">01</span>
-        <div>
-          <p className="hero-summary">{SUMMARY.main}</p>
-          <p className="hero-history">{SUMMARY.previous}</p>
-        </div>
+      <div className="hero-about">
+        <p>
+          i&apos;m an engineer, crypto geek, and builder. i <em>care deeply</em> about
+          making ambitious systems feel simple, useful, and human. these days,
+          i&apos;m tinkering with ai and following whatever feels interesting.
+        </p>
       </div>
     </div>
   );
