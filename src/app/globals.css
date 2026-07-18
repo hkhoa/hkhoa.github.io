@@ -863,42 +863,6 @@ body > * {
   background: transparent;
 }
 .avatar-shell { isolation: isolate; }
-.avatar-corners {
-  position: absolute;
-  inset: -13px;
-  z-index: 2;
-  pointer-events: none;
-}
-.avatar-corners i {
-  position: absolute;
-  width: 17px;
-  height: 17px;
-  color: color-mix(in srgb, var(--card-border) 88%, transparent);
-}
-.avatar-corners i:nth-child(1) {
-  top: 0;
-  left: 0;
-  border-top: 1px solid;
-  border-left: 1px solid;
-}
-.avatar-corners i:nth-child(2) {
-  top: 0;
-  right: 0;
-  border-top: 1px solid;
-  border-right: 1px solid;
-}
-.avatar-corners i:nth-child(3) {
-  right: 0;
-  bottom: 0;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-}
-.avatar-corners i:nth-child(4) {
-  bottom: 0;
-  left: 0;
-  border-bottom: 1px solid;
-  border-left: 1px solid;
-}
 .hero-masthead img { filter: none; }
 .hero-masthead .absolute {
   top: -9px;
