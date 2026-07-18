@@ -5,7 +5,7 @@ export const SITE = {
   description: "Khoa is an engineer in Los Angeles who likes building useful things.",
   ogImage: "https://i.ibb.co/6DfMPRp/khoa-preview.jpg",
   ensName: "khoa.eth",
-  ensLink: "https://zapper.xyz/account/khoa.eth",
+  ensLink: "https://app.ens.domains/khoa.eth",
   doodlesLink: "https://doodles.app",
 } as const;
 
