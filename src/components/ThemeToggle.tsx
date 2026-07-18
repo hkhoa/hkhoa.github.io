@@ -6,9 +6,9 @@ const STORAGE_KEY = "theme";
 
 type Theme = "light" | "dark";
 
-function resolveTheme(stored: string | null, systemDark: boolean): Theme {
+function resolveTheme(stored: string | null): Theme {
   if (stored === "light" || stored === "dark") return stored;
-  return systemDark ? "dark" : "light";
+  return "light";
 }
 
 function applyTheme(theme: Theme) {
@@ -21,8 +21,7 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const resolved = resolveTheme(stored, systemDark);
+    const resolved = resolveTheme(stored);
     setTheme(resolved);
     applyTheme(resolved);
     setMounted(true);

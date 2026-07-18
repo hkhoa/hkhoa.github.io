@@ -23,13 +23,12 @@ export default function Home() {
 
   return (
     <FadeIn>
-      <div className="fixed right-6 top-6 z-50 flex items-center gap-2">
+      <div className="absolute right-6 top-6 z-50 flex items-center gap-2">
         <ThemeToggle />
         <LiveClock />
       </div>
 
       <main className="editorial-shell">
-        <div className="registration-mark registration-mark-tl" aria-hidden="true" />
         <div className="registration-mark registration-mark-br" aria-hidden="true" />
         <aside className="micro-rail micro-rail-left" aria-hidden="true">
           <span>SYS</span><i /><small>OK</small><i /><small>PWR</small><i /><small>NET</small><i /><small>SIG</small>

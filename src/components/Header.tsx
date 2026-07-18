@@ -5,11 +5,6 @@ export default function Header() {
   return (
     <div className="hero-content">
       <h1 id="page-title" className="visually-hidden">{SITE.name}</h1>
-      <div className="hero-system-label" aria-hidden="true">
-        <span>sys</span>
-        id / 01
-      </div>
-
       <div className="hero-masthead">
         <Avatar />
         <div className="hero-identity">

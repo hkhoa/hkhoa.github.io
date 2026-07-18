@@ -29,7 +29,7 @@ export default function LiveClock() {
   if (!mounted) return null;
 
   return (
-    <div className="hidden items-center gap-2 rounded-full border border-card-border bg-card px-4 py-2 text-sm text-text-primary select-none lg:flex">
+    <div className="flex items-center gap-2 rounded-full border border-card-border bg-card px-4 py-2 text-sm text-text-primary select-none">
       <svg
         width="16"
         height="16"
