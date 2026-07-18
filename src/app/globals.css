@@ -1349,7 +1349,7 @@ body > * {
   .hero-masthead {
     align-items: center;
     flex-direction: row;
-    gap: 18px;
+    gap: 30px;
     margin-top: 34px;
   }
   .hero-identity { width: auto; flex: 1; }
@@ -1403,7 +1403,7 @@ body > * {
     border-radius: 10px;
   }
   .hero-content { padding: 20px 13px 26px; }
-  .hero-masthead { gap: 14px; margin-top: 30px; }
+  .hero-masthead { gap: 26px; margin-top: 30px; }
   .hero-masthead .relative.avatar-shell { margin-left: 12px; }
   .hero-about {
     margin-top: 28px;
