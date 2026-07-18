@@ -1190,6 +1190,10 @@ body > * {
   text-decoration-color: color-mix(in srgb, var(--text-secondary) 42%, transparent);
   text-underline-offset: 3px;
 }
+.experience-copy .experience-company-static {
+  text-decoration: none;
+  text-transform: uppercase;
+}
 .experience-details {
   display: flex;
   align-items: center;

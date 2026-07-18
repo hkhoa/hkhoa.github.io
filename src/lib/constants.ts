@@ -12,7 +12,7 @@ export const SITE = {
 export type Experience = {
   title: string;
   company: string;
-  companyUrl: string;
+  companyUrl?: string;
   icon: string;
   note?: string;
   noteUrl?: string;
@@ -25,7 +25,6 @@ export const EXPERIENCES: Experience[] = [
   {
     title: "Co-founder/CTO",
     company: "BSX",
-    companyUrl: "https://bsxfdn.com/",
     icon: "/icons/bsx.png",
     note: "acquired by RISE",
     noteUrl: "https://x.com/risechain/status/1988261714769645772",

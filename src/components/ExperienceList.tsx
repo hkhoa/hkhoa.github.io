@@ -10,9 +10,13 @@ export default function ExperienceList() {
             <p>
               <span>{exp.title}</span>
               <small> at </small>
-              <a className="experience-company" href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
-                {exp.company}
-              </a>
+              {exp.companyUrl ? (
+                <a className="experience-company" href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
+                  {exp.company}
+                </a>
+              ) : (
+                <span className="experience-company experience-company-static">{exp.company}</span>
+              )}
             </p>
             <div className="experience-details">
               <time>{exp.years.replace(" - ", " to ")}</time>
@@ -27,9 +31,13 @@ export default function ExperienceList() {
             </div>
           </div>
           <div className="company-marks">
-            <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
+            {exp.companyUrl ? (
+              <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
+                <img src={exp.icon} alt={exp.company} draggable={false} />
+              </a>
+            ) : (
               <img src={exp.icon} alt={exp.company} draggable={false} />
-            </a>
+            )}
             {exp.noteIcon && (
               <a href={exp.noteUrl} target="_blank" rel="noopener noreferrer">
                 <img src={exp.noteIcon} alt="RiSE" draggable={false} />
