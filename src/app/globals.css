@@ -804,7 +804,7 @@ body > * {
   border: 1px dotted var(--card-border);
   background: transparent;
 }
-.hero-masthead img { filter: grayscale(1) contrast(1.25) brightness(1.7); }
+.hero-masthead img { filter: none; }
 .hero-masthead .absolute {
   top: -9px;
   right: -9px;
