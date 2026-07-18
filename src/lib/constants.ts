@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Khoa Ho",
   title: "gm, i'm khoa",
-  subtitle: "engineer - crypto geek - builder",
-  description: "Khoa is an engineer working in crypto.",
+  subtitle: "engineer - AI/crypto geek - builder",
+  description: "Khoa is an engineer in Los Angeles who likes building useful things.",
   ogImage: "https://i.ibb.co/6DfMPRp/khoa-preview.jpg",
   ensName: "khoa.eth",
   ensLink: "https://zapper.xyz/account/khoa.eth",

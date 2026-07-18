@@ -17,7 +17,10 @@ export default function Avatar() {
   }, []);
 
   return (
-    <div className="relative select-none">
+    <div className="relative select-none avatar-shell">
+      <span className="avatar-corners" aria-hidden="true">
+        <i /><i /><i /><i />
+      </span>
       <NftBadge visible={!isHinging} />
       <div
         onClick={handleClick}

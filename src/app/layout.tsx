@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Instrument_Serif, Inter } from "next/font/google";
 import AgentationWrapper from "@/components/AgentationWrapper";
 import { SITE } from "@/lib/constants";
 import "./globals.css";
 
-const geist = Geist({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -16,8 +16,10 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
 });
@@ -44,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable} ${fraunces.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${geistMono.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
